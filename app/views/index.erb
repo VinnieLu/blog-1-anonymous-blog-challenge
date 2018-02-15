@@ -1,0 +1,23 @@
+<style>
+* { text-align: center; }
+.entry_div { border: solid black 2px ; }
+</style>
+
+
+<a id="new_entry_link" href="/new_entry">Create new entry</a>
+
+<% @all.each do |k| %>
+<div class="entry_div">
+<h1><%= k.title %></h1><br>
+<%= k.body %><br>
+<strong><%= k.author %></strong><br>
+<%= k.date %><br>
+<a href="/post/<%= k.id %>"><%= k.id %></a>
+</div>
+<% end %>
+
+<h4>Tags</h4>
+<% @tags.each do |w| %>
+<%= w.category %><br>
+<% end %>
+

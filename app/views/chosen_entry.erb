@@ -1,0 +1,21 @@
+<style>
+* { text-align: center; }
+</style>
+
+<% @post.each do |k| %>
+<h1><%= k.title %></h1><br>
+<%= k.body %><br>
+<strong><%= k.author %></strong><br>
+<%= k.date %><br>
+<%= k.id %>
+<% end %>
+
+<br>
+
+<form action="/" method="post">
+	<button name="id" type="submit" value="<%=@post.first.id%>">Delete this entry</button>
+</form>
+
+<form action="/post/edit_entry/<%=@post.first.id%>" method="post">
+	<button name="id" type="submit" value="<%=@post.first.id%>">Edit this entry</button>
+</form>
